@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",              // El módulo de salida debe ser CommonJS (compatible con Node.js)
+    "target": "esnext",                // Usamos ESNext para aprovechar las características modernas de JavaScript
+    "lib": ["esnext"],                 // Soporta características de ECMAScript más recientes
+    "types": ["node"],                 // Incluye los tipos globales de Node.js para Express y otras funcionalidades
+    "rootDir": "./",                   // El directorio raíz donde están los archivos TS (fuera de src, ya que server.ts está en el raíz)
+    "outDir": "./dist",                // La carpeta donde se generará el código compilado en JavaScript
+    "sourceMap": true,                 // Habilitar los mapas fuente (útil para depuración)
+    "strict": true,                    // Habilitar todas las comprobaciones estrictas de tipos
+    "skipLibCheck": true,              // Evitar problemas con las bibliotecas de tipos
+    "esModuleInterop": true,           // Permitir la interoperabilidad con módulos CommonJS
+    "moduleResolution": "node",        // Resolver módulos al estilo de Node.js
+    "resolveJsonModule": true,         // Permitir importar archivos JSON como módulos
+    "declaration": false,              // No generar archivos de declaración (.d.ts) para este proyecto
+    "declarationMap": false,           // No generar mapas de declaración
+    "noImplicitAny": true,             // Evitar el uso implícito de `any`
+    "noUncheckedIndexedAccess": true,  // Asegura que los índices sean comprobados
+    "exactOptionalPropertyTypes": true,// Asegura que las propiedades opcionales sean estrictas
+    "isolatedModules": true            // Asegura que cada archivo TS sea tratado como un módulo independiente
+  },
+  "include": ["server.ts", "src/**/*.ts"],  // Incluye tanto el archivo server.ts como los archivos en src
+  "exclude": ["node_modules"]                // Excluir la carpeta node_modules
+}
