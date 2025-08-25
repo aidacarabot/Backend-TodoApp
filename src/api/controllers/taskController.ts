@@ -45,6 +45,7 @@ export const updateTask = async (req: Request, res: Response) => {
     })
     res.json({ message: 'Task updated', task: updatedTask })
   } catch (error) {
+    console.error(error) // Mostrar el error real en consola
     res.status(404).json({ error: 'Task not found or error updating task' })
   }
 }
