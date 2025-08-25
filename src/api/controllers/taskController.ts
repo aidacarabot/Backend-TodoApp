@@ -33,10 +33,15 @@ export const createTask = async (req: Request, res: Response) => {
 export const updateTask = async (req: Request, res: Response) => {
   const { id } = req.params
   const { title, color, completed } = req.body
+  // Solo incluir los campos definidos
+  const data: any = {}
+  if (title !== undefined) data.title = title
+  if (color !== undefined) data.color = color
+  if (completed !== undefined) data.completed = completed
   try {
     const updatedTask = await prisma.task.update({
       where: { id: Number(id) },
-      data: { title, color, completed }
+      data
     })
     res.json({ message: 'Task updated', task: updatedTask })
   } catch (error) {
